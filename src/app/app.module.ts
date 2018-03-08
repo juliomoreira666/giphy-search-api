@@ -1,10 +1,12 @@
+import { GiphySearchService } from './giphy/giphy-search.service';
 import { GiphySeacrhManualComponentModule } from './giphy/giphy-search-manual/giphy-search-manual.module';
-import { GiphySearchManualComponent } from './giphy/giphy-search-manual/giphy-search-manual.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
+import { Http, HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -12,7 +14,11 @@ import { AppComponent } from './app.component';
     AppComponent,
   ],
   imports: [
+    HttpClientModule,
+    HttpModule,
     BrowserModule,
+    Http,
+    NgModule,
     GiphySeacrhManualComponentModule
   ],
   providers: [],

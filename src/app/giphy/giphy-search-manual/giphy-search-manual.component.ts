@@ -1,3 +1,5 @@
+import { Response } from '@angular/http';
+import { GiphySearchService } from './../giphy-search.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class GiphySearchManualComponent implements OnInit {
-    constructor() { }
+    constructor(private giphySearchService: GiphySearchService) { }
 
     ngOnInit() { }
+
+    pesquisarGiphy() {
+        this.giphySearchService.pesquisarGiphy('2', 'good')
+            .subscribe((response: Response) => {
+                console.log(response);
+            });
+    }
 }
 
